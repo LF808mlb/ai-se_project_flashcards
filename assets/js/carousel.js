@@ -1,5 +1,5 @@
 import { removeColorClasses, hexToString } from "./colorMap.js";
-import { getCarouselTitleString } from "./decks.js";
+import { getCarouselTitleString } from "./gallery.js";
 
 export function renderCarouselView(deck) {
   let currentCardIndex = 0;

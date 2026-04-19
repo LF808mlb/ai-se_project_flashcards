@@ -1,9 +1,9 @@
-import { decks, getDeckByID } from "./decks.js";
+import { gallery, getDeckByID } from "./gallery.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 
 const cardTemplate = document.getElementById("card-template");
-const decksList = document.querySelector(".decks__list");
+const galleryList = document.querySelector(".gallery__list");
 const homeView = document.getElementById("home");
 const notFoundView = document.getElementById("not-found");
 const carouselView = document.getElementById("carousel");
@@ -65,9 +65,9 @@ function renderDeckEl(item) {
   deleteBtn.addEventListener("click", () => {
     deckEl.remove();
   });
-  decksList.prepend(deckEl);
+  galleryList.prepend(deckEl);
 }
-decks.forEach(renderDeckEl);
+gallery.forEach(renderDeckEl);
 
 window.addEventListener("hashchange", renderRoute);
 renderRoute();

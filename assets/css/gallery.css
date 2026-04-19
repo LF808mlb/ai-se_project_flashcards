@@ -1,16 +1,16 @@
-.decks {
+.gallery {
   display: flex;
   flex-direction: column;
 }
 
-.decks__title {
+.gallery__title {
   font-weight: 700;
   font-size: 40px;
   margin-bottom: 40px;
   margin-top: 0;
 }
 
-.decks__list {
+.gallery__list {
   display: flex;
   flex-flow: row wrap;
   margin: 0;
@@ -20,7 +20,7 @@
   padding: 0;
 }
 
-.decks__new-deck-btn {
+.gallery__new-deck-btn {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.2;
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 
-.decks__new-deck-btn:hover {
+.gallery__new-deck-btn:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
 }

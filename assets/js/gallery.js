@@ -1,4 +1,4 @@
-const decks = [
+const gallery = [
   {
     id: "html-basics",
     name: "HTML Basics",
@@ -766,11 +766,11 @@ const decks = [
  * @returns {object|undefined} The deck object if found, undefined otherwise
  */
 function getDeckByID(deckId) {
-  return decks.find((deck) => deck.id === deckId);
+  return gallery.find((deck) => deck.id === deckId);
 }
 
 export function getCarouselTitleString(deck, currentCardIndex) {
   return `${deck.name} · ${currentCardIndex + 1}/${deck.cards.length}`;
 }
 
-export { decks, getDeckByID };
+export { gallery, getDeckByID };
