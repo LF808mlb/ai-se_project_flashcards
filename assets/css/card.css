@@ -36,19 +36,29 @@
   line-height: 1.2;
 }
 
-.card__delete-btn {
+.card__btn {
   border: none;
   width: 24px;
   height: 24px;
   background-color: transparent;
   opacity: 50%;
   cursor: pointer;
-  background-image: url("../images/delete.svg");
   z-index: 2;
 }
 
-.card__delete-btn:hover {
+.card__btn:hover {
   opacity: 100%;
+}
+
+.card__btn_type_delete {
+  background-image: url("../images/delete.svg");
+}
+
+.card__btn_type_flip {
+  /* Example: use a rotate icon or style as needed */
+  font-size: 18px;
+  font-weight: bold;
+  background-image: none;
 }
 
 .card_color_green {

@@ -1,0 +1,10 @@
+.deck-view__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.deck-view__header .gallery__title {
+  margin-bottom: 0;
+}

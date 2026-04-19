@@ -94,11 +94,13 @@
         ></button>
       </div>
       <section id="deck-view" class="gallery">
-        <h2 class="gallery__title"></h2>
+        <div class="deck-view__header">
+          <h2 class="gallery__title"></h2>
+          <button type="button" class="gallery__new-card-btn">Practice</button>
+        </div>
         <div class="wrapping-row">
           <ul class="gallery__list wrapping-row__display-contents"></ul>
-          <button type="button" class="gallery__new-card-btn">Practice</button>
-         <template id="card-template">
+          <template id="card-template">
             <li class="card">
               <a href="#"></a>
               <h3 class="card__title"></h3>
@@ -112,10 +114,10 @@
               </div>
             </li>
           </template>
-       </div>
+        </div>
       </section>
     </section>
-    
+
     <footer class="footer">
       <p class="footer__text">&copy;2026 Lesley Fukushima</p>
     </footer>
