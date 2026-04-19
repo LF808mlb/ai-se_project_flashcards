@@ -46,7 +46,7 @@ function createDeckEl(item) {
   const fragment = cardTemplate.content.cloneNode(true);
   const deckEl = fragment.querySelector(".card");
   deckEl.querySelector(".card__title").textContent = item.name;
-  deckEl.querySelector(".card__count").textContent =
+  deckEl.querySelector(".card__count-btn").textContent =
     `${item.cards.length} cards`;
 
   const colorName = hexToString(item.color);
