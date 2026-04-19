@@ -2,7 +2,7 @@ import { decks, getDeckByID } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 
-const deckTemplate = document.getElementById("deck-template");
+const cardTemplate = document.getElementById("card-template");
 const decksList = document.querySelector(".decks__list");
 const homeView = document.getElementById("home");
 const notFoundView = document.getElementById("not-found");
@@ -41,16 +41,16 @@ function renderRoute() {
 }
 
 function createDeckEl(item) {
-  const fragment = deckTemplate.content.cloneNode(true);
-  const deckEl = fragment.querySelector(".deck");
-  deckEl.querySelector(".deck__title").textContent = item.name;
-  deckEl.querySelector(".deck__count").textContent =
+  const fragment = cardTemplate.content.cloneNode(true);
+  const deckEl = fragment.querySelector(".card");
+  deckEl.querySelector(".card__title").textContent = item.name;
+  deckEl.querySelector(".card__count").textContent =
     `${item.cards.length} cards`;
 
   const colorName = hexToString(item.color);
-  deckEl.classList.add(`deck_color_${colorName}`);
+  deckEl.classList.add(`card_color_${colorName}`);
 
-  const deckLink = deckEl.querySelector(".deck__link");
+  const deckLink = deckEl.querySelector(".card__link");
   deckLink.href = `#carousel/${item.id}`;
   deckLink.addEventListener("click", () => {
     currentDeckID = item.id;
@@ -60,7 +60,7 @@ function createDeckEl(item) {
 
 function renderDeckEl(item) {
   const deckEl = createDeckEl(item);
-  const deleteBtn = deckEl.querySelector(".deck__delete-btn");
+  const deleteBtn = deckEl.querySelector(".card__delete-btn");
 
   deleteBtn.addEventListener("click", () => {
     deckEl.remove();
