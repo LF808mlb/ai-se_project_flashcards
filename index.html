@@ -93,28 +93,29 @@
           aria-label="Flip card over"
         ></button>
       </div>
+      <section id="deck-view" class="gallery">
+        <h2 class="gallery__title"></h2>
+        <div class="wrapping-row">
+          <ul class="gallery__list wrapping-row__display-contents"></ul>
+          <button type="button" class="gallery__new-card-btn">Practice</button>
+         <template id="card-template">
+            <li class="card">
+              <a href="#"></a>
+              <h3 class="card__title"></h3>
+              <div class="card__row">
+                <p class="card__count"></p>
+                <button
+                  type="button"
+                  aria-label="Show number of cards"
+                  class="card__count-btn"
+                ></button>
+              </div>
+            </li>
+          </template>
+       </div>
+      </section>
     </section>
-    <section id="deck-view" class="gallery">
-      <h2 class="gallery__title"></h2>
-      <div class="wrapping-row">
-        <ul class="gallery__list wrapping-row__display-contents"></ul>
-        <button type="button" class="gallery__new-card-btn">Practice</button>
-        <template id="card-template">
-          <li class="card">
-            <a href="#"></a>
-            <h3 class="card__title"></h3>
-            <div class="card__row">
-              <p class="card__count"></p>
-              <button
-                type="button"
-                aria-label="Show number of cards"
-                class="card__count-btn"
-              ></button>
-            </div>
-          </li>
-        </template>
-      </div>
-    </section>
+    
     <footer class="footer">
       <p class="footer__text">&copy;2026 Lesley Fukushima</p>
     </footer>
