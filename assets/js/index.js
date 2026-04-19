@@ -2,6 +2,8 @@ import { gallery, getDeckByID } from "./gallery.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 
+let currentDeckID = null;
+
 const cardTemplate = document.getElementById("card-template");
 const galleryList = document.querySelector(".gallery__list");
 const homeView = document.getElementById("home");
