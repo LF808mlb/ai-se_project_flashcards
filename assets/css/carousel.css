@@ -41,6 +41,10 @@
   grid-area: card;
   box-sizing: border-box;
   max-width: 386px;
+  box-shadow:
+    1px -1px 2px 0px #00000040 inset,
+    -1px 2px 2px 0px #ffffffb2 inset,
+    0px 8px 24px 4px #00000040;
 }
 
 .carousel__card-text {
@@ -54,6 +58,7 @@
   width: 44px;
   height: 44px;
   cursor: pointer;
+  box-shadow: 0px 1px 4px 0px #00000026;
 }
 
 .carousel__btn:hover::before {
