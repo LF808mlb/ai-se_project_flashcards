@@ -17,10 +17,32 @@
   }
 
   .gallery__new-card-btn {
-    position: fixed;
-    bottom: 39px;
+    width: calc(100% - 40px);
+    max-width: 353px;
     left: 0;
     right: 0;
+  }
+
+  .deck-view__buttons {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    max-width: 393px;
+    height: 44px;
+    padding: 12px 20px;
+    gap: 12px;
+    padding-bottom: 40px;
+  }
+
+  .gallery__new-card-btn,
+  .gallery__practice-btn {
+    position: fixed;
+    bottom: 39px;
     margin: 0 auto;
     z-index: 2;
     font-size: 18px;
@@ -28,14 +50,34 @@
     line-height: 1;
     background-color: #000;
     color: #fff;
-    width: calc(100% - 40px);
-    max-width: 353px;
     aspect-ratio: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
     height: 44px;
+  }
+
+  .gallery__practice-btn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0 20px 20px 0;
+    z-index: 100;
+    width: calc(50% - 6px - 20px); /* or your preferred width */
+    max-width: 393px;
+  }
+
+  .gallery__new-card-btn_location_deck-view {
+    position: relative;
+    width: calc(50% - 6px - 20px);
+    background: #cccccccc;
+
+    /* Set the width with calc(). It should be 50%, minus half
+   the distance between the buttons, minus the distance from 
+   the right side of the page. */
+    /* Correct the colors */
+    /* You may need to remove margin */
   }
 
   .footer {
@@ -50,5 +92,12 @@
 
   main {
     padding-bottom: 80px;
+  }
+
+  .gallery__practice-btn,
+  .gallery__new-card-btn_location_deck-view {
+    position: static;
+    margin: 0;
+    /* Keep other button styles as needed */
   }
 }
