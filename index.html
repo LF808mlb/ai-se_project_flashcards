@@ -68,6 +68,7 @@
       <h2 class="not-found__status-code">404</h2>
       <p class="not-found__text">404 Not Found</p>
     </section>
+
     <section id="carousel" class="carousel">
       <h2 class="carousel__title">HTML Tags Deck &middot; 1/10</h2>
       <div class="carousel__horizontal">
@@ -93,29 +94,30 @@
           aria-label="Flip card over"
         ></button>
       </div>
-      <section id="deck-view" class="gallery">
-        <div class="deck-view__header">
-          <h2 class="gallery__title"></h2>
-          <button type="button" class="gallery__new-card-btn">Practice</button>
-        </div>
-        <div class="wrapping-row">
-          <ul class="gallery__list wrapping-row__display-contents"></ul>
-          <template id="card-template">
-            <li class="card">
-              <a href="#"></a>
-              <h3 class="card__title"></h3>
-              <div class="card__row">
-                <p class="card__count"></p>
-                <button
-                  type="button"
-                  aria-label="Show number of cards"
-                  class="card__count-btn"
-                ></button>
-              </div>
-            </li>
-          </template>
-        </div>
-      </section>
+    </section>
+
+    <section id="deck-view" class="gallery">
+      <div class="deck-view__header">
+        <h2 class="gallery__title"></h2>
+        <button type="button" class="gallery__new-card-btn">Practice</button>
+      </div>
+      <div class="wrapping-row">
+        <ul class="gallery__list wrapping-row__display-contents"></ul>
+        <template id="deck-card-template">
+          <li class="card">
+            <a href="#"></a>
+            <h3 class="card__title"></h3>
+            <div class="card__row">
+              <p class="card__count"></p>
+              <button
+                type="button"
+                aria-label="Show number of cards"
+                class="card__count-btn"
+              ></button>
+            </div>
+          </li>
+        </template>
+      </div>
     </section>
 
     <footer class="footer">

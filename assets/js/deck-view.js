@@ -8,7 +8,7 @@ function renderCard(cardData, deckColor) {
 // Creates a card element for the deck view
 function createCard(cardData, deckColor) {
   const deckView = document.getElementById("deck-view");
-  const cardTemplate = deckView.querySelector("#card-template");
+  const cardTemplate = deckView.querySelector("#deck-card-template");
   const fragment = cardTemplate.content.cloneNode(true);
   const cardEl = fragment.querySelector(".card");
 
