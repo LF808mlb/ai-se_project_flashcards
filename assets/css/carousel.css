@@ -22,6 +22,31 @@
   gap: 12px;
 }
 
+@media screen and (max-width: 320px) {
+  .carousel__grid {
+    display: grid;
+    grid-template-areas:
+      "card"
+      "left flip right";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    justify-items: center;
+  }
+  .carousel__card {
+    grid-area: card;
+  }
+  .carousel__btn_type_left {
+    grid-area: left;
+  }
+  .carousel__btn_type_flip {
+    grid-area: flip;
+  }
+  .carousel__btn_type_right {
+    grid-area: right;
+  }
+}
+
 .carousel__flip-container {
   display: flex;
   justify-content: center;
