@@ -8,3 +8,10 @@
 .deck-view__header .gallery__title {
   margin-bottom: 0;
 }
+
+.card__btn_card__btn_type_flip {
+  width: 20px;
+  height: 20px;
+  top: 161px;
+  left: 20px;
+}

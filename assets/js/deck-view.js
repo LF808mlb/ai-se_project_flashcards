@@ -18,7 +18,7 @@ function createCard(cardData, deckColor) {
 
   // Flip button logic
   const flipBtn = document.createElement("button");
-  flipBtn.className = "card__flip-btn";
+  flipBtn.className = "card__btn card__btn_type_flip";
   flipBtn.type = "button";
   flipBtn.setAttribute("aria-label", "Flip card");
   flipBtn.textContent = "⟳";
@@ -34,11 +34,16 @@ function createCard(cardData, deckColor) {
     }
   });
 
-  // Add flip button to the card row
-  const cardRow = cardEl.querySelector(".card__row");
-  cardRow.appendChild(flipBtn);
+  // Delete button logic
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "card__btn card__btn_type_delete";
+  deleteBtn.type = "button";
+  deleteBtn.setAttribute("aria-label", "Delete card");
 
-  // (Add delete button logic if needed)
+  // Add flip button to the left and delete button to the right in card row
+  const cardRow = cardEl.querySelector(".card__row");
+  cardRow.insertBefore(flipBtn, cardRow.firstChild);
+  cardRow.appendChild(deleteBtn);
 
   return cardEl;
 }
