@@ -85,7 +85,7 @@ function createDeckEl(item) {
 
 function renderDeckEl(item) {
   const deckEl = createDeckEl(item);
-  const deleteBtn = deckEl.querySelector(".card__delete-btn");
+  const deleteBtn = deckEl.querySelector(".card__btn_type_delete");
 
   deleteBtn.addEventListener("click", () => {
     deckEl.remove();
