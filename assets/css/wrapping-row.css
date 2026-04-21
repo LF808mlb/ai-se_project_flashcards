@@ -1,6 +1,7 @@
 .wrapping-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(min(325px, 100%), 353px));
   gap: 20px;
 }
 
