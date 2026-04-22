@@ -24,10 +24,8 @@ export function renderCarouselView(deck) {
     const currentCard = deck.cards[currentCardIndex];
     if (showingQuestion) {
       carouselCardText.textContent = currentCard.question;
-      carouselCard.classList.remove("carousel__card_color_white");
     } else {
       carouselCardText.textContent = currentCard.answer;
-      carouselCard.classList.add("carousel__card_color_white");
     }
 
     carouselTitle.textContent = getCarouselTitleString(deck, currentCardIndex);
@@ -41,6 +39,12 @@ export function renderCarouselView(deck) {
     const colorName = hexToString(deck.color);
     removeColorClasses(carouselCard);
     carouselCard.classList.add(`carousel__card_color_${colorName}`);
+    // Ensure white background only when showing answer
+    if (!showingQuestion) {
+      carouselCard.classList.add("carousel__card_color_white");
+    } else {
+      carouselCard.classList.remove("carousel__card_color_white");
+    }
   }
 
   leftBtn.onclick = () => {
