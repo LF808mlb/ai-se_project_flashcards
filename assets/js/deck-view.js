@@ -39,6 +39,9 @@ function createCard(cardData, deckColor) {
   deleteBtn.className = "card__btn card__btn_type_delete";
   deleteBtn.type = "button";
   deleteBtn.setAttribute("aria-label", "Delete card");
+  deleteBtn.addEventListener("click", () => {
+    cardEl.remove();
+  });
 
   // Add flip button to the left and delete button to the right in card row
   const cardRow = cardEl.querySelector(".card__row");
