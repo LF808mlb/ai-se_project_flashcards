@@ -22,13 +22,14 @@
   grid-template-columns: auto 1fr auto;
   grid-template-rows: 1fr auto;
   gap: 12px;
+  justify-items: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 393px) {
   .carousel__grid {
     display: grid;
     grid-template-areas:
-      "card"
+      ". card ."
       "left flip right";
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
@@ -129,6 +130,8 @@
 .carousel__btn_type_flip {
   background-color: #fff;
   grid-area: flip;
+  justify-self: center;
+  align-self: center;
 }
 
 .carousel__btn_type_flip::before {
