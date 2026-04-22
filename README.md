@@ -28,3 +28,5 @@ Refactoring a couple of BEM blocks were necessary because of the deck view being
 Making sure the cards rendered in the appropriate view needed to be done, as well as making sure buttons (flip, delete, practice) worked.
 
 When implementing responsive design, a media query was included in order for the Flashcard Project to be functional (clean and uesr-friendly) on smaller devices, and styling was done to match the design provided in Figma, including adjusting linear gradient, box shadowing and z-index properties to give necessary items priority in certain views.
+
+[GitHub Pages link] (https://github.com/LF808mlb/ai-se_project_flashcards.git)
