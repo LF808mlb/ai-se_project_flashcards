@@ -15,3 +15,14 @@
   top: 161px;
   left: 20px;
 }
+
+@media screen and (max-width: 393px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 78px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}
