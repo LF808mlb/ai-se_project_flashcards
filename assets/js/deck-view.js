@@ -23,7 +23,7 @@ function createCard(cardData, deckColor) {
   flipBtn.setAttribute("aria-label", "Flip card");
   flipBtn.textContent = "⟳";
   let flipped = false;
-  flipBtn.addEventListener("click", () => {
+  flipBtn.onclick = () => {
     flipped = !flipped;
     if (flipped) {
       cardEl.querySelector(".card__title").textContent = cardData.answer;
@@ -32,7 +32,7 @@ function createCard(cardData, deckColor) {
       cardEl.querySelector(".card__title").textContent = cardData.question;
       cardEl.style.backgroundColor = deckColor;
     }
-  });
+  };
 
   // Delete button logic
   const deleteBtn = document.createElement("button");

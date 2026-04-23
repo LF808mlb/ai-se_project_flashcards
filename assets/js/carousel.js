@@ -13,10 +13,10 @@ export function renderCarouselView(deck) {
   const carouselFlipBtn = carouselSection.querySelector(
     ".carousel__btn_type_flip",
   );
-  carouselFlipBtn.addEventListener("click", () => {
+  carouselFlipBtn.onclick = () => {
     showingQuestion = !showingQuestion;
     updateDisplay();
-  });
+  };
   const leftBtn = carouselSection.querySelector(".carousel__btn_type_left");
   const rightBtn = carouselSection.querySelector(".carousel__btn_type_right");
 
