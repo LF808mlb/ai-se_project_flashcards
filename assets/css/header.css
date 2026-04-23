@@ -17,3 +17,12 @@
   text-decoration: none;
   color: #1a1a1a;
 }
+
+@media screen and (max-width: 393px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+  }
+}
