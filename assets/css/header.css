@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 393px) {
   .header {
-    padding-bottom: 42px;
+    padding-bottom: 20px;
   }
   .header__title {
     font-size: 20px;

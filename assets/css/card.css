@@ -19,6 +19,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+  margin-left: 10px;
 }
 
 .card__title {
@@ -100,4 +101,10 @@
 
 .card_color_yellow {
   background-color: #f5d770;
+}
+
+@media screen and (max-width: 393px) {
+  .card {
+    margin-left: 20px;
+  }
 }
