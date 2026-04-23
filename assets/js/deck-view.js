@@ -51,7 +51,6 @@ function createCard(cardData, deckColor) {
   return cardEl;
 }
 export function renderDeckView(deck) {
-  console.log("Rendering deck view for:", deck);
   // Select elements at the top
   const deckView = document.getElementById("deck-view");
   const title = deckView.querySelector(".gallery__title");

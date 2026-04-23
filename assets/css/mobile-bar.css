@@ -105,7 +105,7 @@
     /* Keep other button styles as needed */
   }
 
-  .page_location_carousel .footer {
+  .page_no-mobile-bar {
     position: static;
   }
 }
