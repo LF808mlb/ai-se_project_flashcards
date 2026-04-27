@@ -102,9 +102,3 @@
 .card_color_yellow {
   background-color: #f5d770;
 }
-
-@media screen and (max-width: 393px) {
-  .card {
-    margin-left: 20px;
-  }
-}
