@@ -13,7 +13,6 @@
 }
 
 .page__main-content {
-  margin-top: 40px;
   flex-grow: 1;
   margin-bottom: 138px;
 }
@@ -23,15 +22,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-
   .header__title {
     font-size: 20px;
   }
