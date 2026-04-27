@@ -10,6 +10,12 @@
   margin-top: 0;
 }
 
+.gallery__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .gallery__list {
   flex-flow: row wrap;
   margin: 0;
