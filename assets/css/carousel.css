@@ -10,7 +10,7 @@
   font-weight: 500;
   font-size: 14px;
   color: #1a1a1a80;
-  margin-top: 100px;
+  margin-top: 46px;
   margin-bottom: 32px;
 }
 
@@ -28,13 +28,12 @@
 @media screen and (max-width: 353px) {
   .carousel__grid {
     display: grid;
-    grid-template-areas:
-      ". card ."
-      "left flip right";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "left flip right";
+    gap: 20px;
     justify-items: center;
+    align-items: center;
+    margin-top: 30px;
   }
   .carousel__card {
     grid-area: card;
