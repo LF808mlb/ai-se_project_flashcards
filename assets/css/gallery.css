@@ -44,6 +44,15 @@
   color: #1a1a1a;
 }
 
+.gallery__practice-btn {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 18px;
+}
+
 @media screen and (max-width: 393px) {
   .gallery__title {
     margin-top: 20px;
