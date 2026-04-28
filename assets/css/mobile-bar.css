@@ -64,7 +64,6 @@
   .gallery__practice-btn {
     position: fixed;
     right: 0;
-    bottom: 0;
     margin: 0 20px 20px 0;
     z-index: 100;
     width: calc(50% - 6px - 20px); /* or your preferred width */
@@ -95,13 +94,6 @@
 
   main {
     padding-bottom: 80px;
-  }
-
-  .gallery__practice-btn,
-  .gallery__new-card-btn_location_deck-view {
-    position: static;
-    margin: 0;
-    /* Keep other button styles as needed */
   }
 
   .page_no-mobile-bar {
