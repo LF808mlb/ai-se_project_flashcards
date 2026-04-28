@@ -55,26 +55,24 @@
   }
 
   .gallery__new-card-btn {
-    width: calc(100% - 40px);
-    max-width: 353px;
-    left: 0;
-    right: 0;
+    width: calc(50% - 6px - 20px);
+    left: 20px;
   }
 
   .gallery__practice-btn {
     position: fixed;
-    right: 0;
-    margin: 0 20px 20px 0;
+    right: 20px;
+    bottom: 60px;
     z-index: 100;
-    width: calc(50% - 6px - 20px); /* or your preferred width */
-    max-width: 393px;
+    width: calc(50% - 6px - 20px);
   }
 
   .gallery__new-card-btn_location_deck-view {
-    position: relative;
+    position: fixed;
     width: calc(50% - 6px - 20px);
     background: #cccccccc;
-
+    left: 20px;
+    bottom: 60px;
     /* Set the width with calc(). It should be 50%, minus half
    the distance between the buttons, minus the distance from 
    the right side of the page. */
