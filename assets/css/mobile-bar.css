@@ -20,13 +20,6 @@
     display: none;
   }
 
-  .gallery__new-card-btn {
-    width: calc(100% - 40px);
-    max-width: 353px;
-    left: 0;
-    right: 0;
-  }
-
   .deck-view__buttons {
     position: fixed;
     left: 0;
@@ -59,6 +52,13 @@
     align-items: center;
     border-radius: 8px;
     height: 44px;
+  }
+
+  .gallery__new-card-btn {
+    width: calc(100% - 40px);
+    max-width: 353px;
+    left: 0;
+    right: 0;
   }
 
   .gallery__practice-btn {
