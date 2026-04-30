@@ -55,7 +55,7 @@
   }
 
   .gallery__new-card-btn {
-    width: calc(50% - 6px - 20px);
+    width: calc(100% - 40px);
     left: 20px;
   }
 
