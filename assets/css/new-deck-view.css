@@ -1,10 +1,18 @@
+.new-deck-view__title {
+  margin-right: 473px;
+  size: 40px;
+}
+
 .new-deck-view__form {
   border-radius: 12px;
-  border: 1px solid #1a1a1a;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.new-deck-view__color-picker {
+  border: none;
 }
 
 .new-deck-view__color-input {
@@ -55,4 +63,29 @@
 
 .new-deck-view__color-input_color_yellow {
   background-color: #f5d770;
+}
+
+.new-deck-view__json-textarea {
+  width: 670px;
+  height: 230px;
+  gap: 10px;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  border-radius: 8px;
+  border-width: 1px;
+  margin-top: 12px;
+}
+
+.new-deck-view__submit-btn {
+  gap: 10px;
+  width: 172px;
+  height: 44px;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+  border-radius: 8px;
+  margin-right: 498px;
 }
