@@ -12,6 +12,7 @@ const notFoundView = document.getElementById("not-found");
 const carouselView = document.getElementById("carousel");
 const deckView = document.getElementById("deck-view");
 const mainEl = document.querySelector("main.page__main-content");
+const newDeckView = document.getElementById("new-deck-view");
 
 function renderRoute() {
   const hash = window.location.hash;
@@ -62,6 +63,14 @@ function renderRoute() {
       mainEl.classList.remove("page__main-content_location_carousel");
       if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
     }
+  } else if (hash === "#new-deck-view") {
+    homeView.style.display = "none";
+    notFoundView.style.display = "none";
+    carouselView.style.display = "none";
+    deckView.style.display = "none";
+    newDeckView.style.display = "block";
+    mainEl.classList.remove("page__main-content_location_carousel");
+    if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
   } else {
     homeView.style.display = "none";
     notFoundView.style.display = "";
