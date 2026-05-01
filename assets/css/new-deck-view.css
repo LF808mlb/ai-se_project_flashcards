@@ -14,8 +14,23 @@
   border-radius: 4px;
 }
 
+/* Checked state */
 .new-deck-view__color-input:checked {
-  border: 2px solid rgb(0 0 0 / 0.2);
+  border: 2px solid #333;
+  box-shadow: 0 0 0 2px #b3e6c7;
+}
+
+/* Hover state */
+.new-deck-view__color-input:hover {
+  border: 2px solid #aaa;
+  box-shadow: 0 0 0 2px #e0e0e0;
+}
+
+/* Focus state (keyboard accessibility) */
+.new-deck-view__color-input:focus {
+  border: 2px solid #005fcc;
+  box-shadow: 0 0 0 3px #b3d4fc;
+  outline: none;
 }
 
 .new-deck-view__color-input_color_green {
