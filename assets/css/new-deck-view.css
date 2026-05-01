@@ -65,6 +65,12 @@
   background-color: #f5d770;
 }
 
+.new-deck-view__json-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; 
+}
+
 .new-deck-view__json-textarea {
   width: 670px;
   height: 230px;
