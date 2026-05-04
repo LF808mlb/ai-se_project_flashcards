@@ -3,7 +3,15 @@ const submitBtn = document.querySelector(".new-deck-view__submit-btn");
 const textarea = document.querySelector(".new-deck-view__json-textarea");
 
 form.addEventListener("submit", function (e) {
-  window.location.hash = `deck/${uniqueId}`;
+  e.preventDefault();
+  const formData = new FormData(form);
+  const values = Object.fromEntries(formData.entries());
+  const jsonData = JSON.parse(textarea.value);
+  if (jsonData.color) {
+    jsonData.color = normalizeColor(jsonData.color);
+  }
+  const uniqueId = `${slugify(jsonData.name)}-${Date.now()}`;
+
   const deck = {
     id: uniqueId,
     color: jsonData.color,
@@ -11,14 +19,7 @@ form.addEventListener("submit", function (e) {
     name: jsonData.name,
   };
   gallery.push(deck);
-  if (jsonData.color) {
-    jsonData.color = normalizeColor(jsonData.color);
-  }
-  e.preventDefault();
-  const formData = new FormData(form);
-  const values = Object.fromEntries(formData.entries());
-  const jsonData = JSON.parse(textarea.value);
-  const uniqueId = `${slugify(values.name)}-${Date.now()}`;
+  window.location.hash = `deck/${uniqueId}`;
 });
 
 export { disableSubmitBtn };
