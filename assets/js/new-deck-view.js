@@ -2,6 +2,12 @@ const form = document.querySelector("#new-deck-view-form");
 const submitBtn = document.querySelector(".new-deck-view__submit-btn");
 const textarea = document.querySelector(".new-deck-view__json-textarea");
 
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const values = Object.fromEntries(formData.entries());
+});
+
 export { disableSubmitBtn };
 // Enables the submit button
 function disableSubmitBtn() {
