@@ -15,7 +15,7 @@ form.addEventListener("submit", function (e) {
 
   const deck = {
     id: uniqueId,
-    color: jsonData.color,
+    color: normalizeColor(values.color),
     cards: jsonData.cards,
     name: jsonData.name,
   };
