@@ -1,3 +1,12 @@
+const form = document.querySelector("#new-deck-view-form");
+const submitBtn = document.querySelector(".new-deck-view__submit-btn");
+const textarea = document.querySelector(".new-deck-view__json-textarea");
+
+export { disableSubmitBtn };
+// Enables the submit button
+function disableSubmitBtn() {
+  submitBtn.disabled = false;
+}
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 
 /**

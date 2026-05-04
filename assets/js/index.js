@@ -2,6 +2,7 @@ import { gallery, getDeckByID } from "./gallery.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView } from "./deck-view.js";
+import { disableSubmitBtn } from "./new-deck-view.js";
 
 let currentDeckID = null;
 
@@ -71,6 +72,7 @@ function renderRoute() {
     newDeckView.style.display = "block";
     mainEl.classList.remove("page__main-content_location_carousel");
     if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
+    disableSubmitBtn();
   } else {
     homeView.style.display = "none";
     notFoundView.style.display = "";
