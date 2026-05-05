@@ -1,0 +1,36 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: #d9d9d980; /* d9d9d9 with 50% opacity */
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_visible {
+  visibility: visible;
+}
+
+.modal__container {
+  background-color: white;
+  max-width: 320px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal__message {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.modal__close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+}
