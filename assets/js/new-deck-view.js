@@ -1,10 +1,13 @@
+function showError(message) {
+  errorMessageEl.textContent = message;
+  errorModal.classList.add("modal_visible");
+}
 import { gallery } from "./gallery.js";
 
 const form = document.querySelector("#new-deck-view-form");
 const submitBtn = document.querySelector(".new-deck-view__submit-btn");
 const textarea = document.querySelector(".new-deck-view__json-textarea");
 
-// Error modal element selection and close handler
 const errorModal = document.querySelector("#error-modal");
 const errorModalCloseBtn = errorModal.querySelector('[aria-label="Close"]');
 const errorMessageEl = errorModal.querySelector(".modal__error");
@@ -15,12 +18,39 @@ if (errorModalCloseBtn) {
     errorMessageEl.textContent = "";
   });
 }
+function parseJSON(jsonString) {
+  try {
+    return JSON.parse(jsonString);
+  } catch (error) {
+    return null;
+  }
+}
+
+function validateName(name) {
+  if (typeof name != "string" || name.length < 2 || name.length > 80) {
+    return null;
+  }
+  return name;
+}
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(form);
   const values = Object.fromEntries(formData.entries());
-  const jsonData = JSON.parse(textarea.value);
+  const jsonData = parseJSON(textarea.value);
+  if (!jsonData) {
+    showError("Invalid JSON. Please check your input.");
+    return;
+  }
+  const validName = validateName(jsonData.name);
+  if (!validName) {
+    showError("Deck name must be a string between 2 and 80 characters.");
+    return;
+  }
+  if (!Array.isArray(jsonData.cards)) {
+    showError("Cards must be an array.");
+    return;
+  }
   if (jsonData.color) {
     jsonData.color = normalizeColor(jsonData.color);
   }
