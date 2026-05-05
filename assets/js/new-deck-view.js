@@ -1,7 +1,20 @@
 import { gallery } from "./gallery.js";
+
 const form = document.querySelector("#new-deck-view-form");
 const submitBtn = document.querySelector(".new-deck-view__submit-btn");
 const textarea = document.querySelector(".new-deck-view__json-textarea");
+
+// Error modal element selection and close handler
+const errorModal = document.querySelector("#error-modal");
+const errorModalCloseBtn = errorModal.querySelector('[aria-label="Close"]');
+const errorMessageEl = errorModal.querySelector(".modal__error");
+
+if (errorModalCloseBtn) {
+  errorModalCloseBtn.addEventListener("click", () => {
+    errorModal.classList.remove("modal_visible");
+    errorMessageEl.textContent = "";
+  });
+}
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
