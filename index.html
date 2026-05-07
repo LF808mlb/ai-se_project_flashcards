@@ -225,6 +225,9 @@
       </form>
     </section>
 
+    <section id="about-view" class="about">
+      <!-- Your about content goes here -->
+    </section>
     <footer class="footer">
       <p class="footer__text">&copy;2026 Lesley Fukushima</p>
     </footer>
@@ -235,7 +238,7 @@
       const carouselSection = document.getElementById("carousel");
       const deckViewSection = document.getElementById("deck-view");
       const newDeckViewSection = document.getElementById("new-deck-view");
-      const aboutSection = document.getElementById("about"); // If you have an about section
+      const aboutSection = document.getElementById("about-view");
 
       function hideAllSections() {
         homeSection.hidden = true;
@@ -245,6 +248,26 @@
         newDeckViewSection.hidden = true;
         if (aboutSection) aboutSection.hidden = true;
       }
+      function router() {
+        hideAllSections();
+        const hash = window.location.hash;
+        if (hash === "#about") {
+          aboutSection.hidden = false;
+        } else if (hash === "#home" || hash === "" || hash === "#/") {
+          homeSection.hidden = false;
+        } else if (hash.startsWith("#deck/")) {
+          deckViewSection.hidden = false;
+        } else if (hash.startsWith("#carousel/")) {
+          carouselSection.hidden = false;
+        } else if (hash === "#new-deck-view") {
+          newDeckViewSection.hidden = false;
+        } else {
+          notFoundSection.hidden = false;
+        }
+      }
+
+      window.addEventListener("hashchange", router);
+      window.addEventListener("DOMContentLoaded", router);
 
       function renderHome() {
         hideAllSections();
