@@ -66,7 +66,7 @@ form.addEventListener("submit", function (e) {
   window.location.hash = `deck/${uniqueId}`;
 });
 
-export { disableSubmitBtn };
+export { disableSubmitBtn, showError };
 // Enables the submit button
 function disableSubmitBtn() {
   submitBtn.disabled = false;

@@ -4,6 +4,7 @@ import { hexToString } from "./colorMap.js";
 import { renderDeckView } from "./deck-view.js";
 import { disableSubmitBtn } from "./new-deck-view.js";
 import { getDecks } from "./api.js";
+import { showError } from "./new-deck-view.js";
 
 let currentDeckID = null;
 
@@ -112,10 +113,19 @@ function renderDeckEl(item) {
   galleryList.prepend(deckEl);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  getDecks().then((decks) => {
-    decks.forEach(renderDeckEl);
-  });
+window.addEventListener("DOMContentLoaded", () => {
+  getDecks()
+    .then((decks) => {
+      // If you need to use fetchedDecks, uncomment the next line:
+      // fetchedDecks.push(...decks);
+      decks.forEach(renderDeckEl);
+    })
+    .catch(() => {
+      showError("Error fetching decks");
+    })
+    .finally(() => {
+      router();
+    });
 });
 
 window.addEventListener("hashchange", renderRoute);
