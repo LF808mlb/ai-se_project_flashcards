@@ -17,6 +17,12 @@ const deckView = document.getElementById("deck-view");
 const mainEl = document.querySelector("main.page__main-content");
 const newDeckView = document.getElementById("new-deck-view");
 
+/**
+ * Handles client-side routing for the application by showing and hiding
+ * the appropriate view based on the current URL hash.
+ * Updates the display of main sections (home, deck, carousel, not found, new deck view)
+ * and manages page layout classes for mobile and carousel views.
+ */
 function renderRoute() {
   const hash = window.location.hash;
   const pageEl = document.querySelector(".page");
@@ -85,6 +91,16 @@ function renderRoute() {
   }
 }
 
+/**
+ * Creates a DOM element representing a deck card for the gallery view.
+ *
+ * @param {Object} item - The deck object to render.
+ * @param {string} item._id - The unique identifier for the deck.
+ * @param {string} item.name - The name of the deck.
+ * @param {string} item.color - The color of the deck.
+ * @param {Array} item.cards - The array of card objects in the deck.
+ * @returns {HTMLElement} The DOM element representing the deck card.
+ */
 function createDeckEl(item) {
   const fragment = cardTemplate.content.cloneNode(true);
   const deckEl = fragment.querySelector(".card");
@@ -103,6 +119,16 @@ function createDeckEl(item) {
   return deckEl;
 }
 
+/**
+ * Renders a deck element in the gallery list and sets up its delete button handler.
+ *
+ * @param {Object} item - The deck object to render.
+ * @param {string} item._id - The unique identifier for the deck.
+ * @param {string} item.name - The name of the deck.
+ * @param {string} item.color - The color of the deck.
+ * @param {Array} item.cards - The array of card objects in the deck.
+ * @returns {void}
+ */
 function renderDeckEl(item) {
   const deckEl = createDeckEl(item);
   const deleteBtn = deckEl.querySelector(".card__btn_type_delete");
