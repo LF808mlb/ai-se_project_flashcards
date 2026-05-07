@@ -3,7 +3,7 @@ import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView } from "./deck-view.js";
 import { disableSubmitBtn } from "./new-deck-view.js";
-import { getDecks } from "./api.js";
+import { getDecks, deleteDeck } from "./api.js";
 import { showError } from "./new-deck-view.js";
 
 let currentDeckID = null;
@@ -108,7 +108,18 @@ function renderDeckEl(item) {
   const deleteBtn = deckEl.querySelector(".card__btn_type_delete");
 
   deleteBtn.addEventListener("click", () => {
-    deckEl.remove();
+    deleteDeck(item._id)
+      .then(() => {
+        deckEl.remove();
+        // Remove from fetchedDecks
+        const idx = fetchedDecks.findIndex((deck) => deck._id === item._id);
+        if (idx !== -1) {
+          fetchedDecks.splice(idx, 1);
+        }
+      })
+      .catch(() => {
+        showError("Error deleting deck");
+      });
   });
   galleryList.prepend(deckEl);
 }
