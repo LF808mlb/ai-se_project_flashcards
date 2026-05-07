@@ -3,6 +3,7 @@ import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView } from "./deck-view.js";
 import { disableSubmitBtn } from "./new-deck-view.js";
+import { getDecks } from "./api.js";
 
 let currentDeckID = null;
 
