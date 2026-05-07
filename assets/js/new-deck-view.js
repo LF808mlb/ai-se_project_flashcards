@@ -1,3 +1,9 @@
+/**
+ * Displays an error message in the error modal.
+ *
+ * @param {string} message - The error message to display
+ * @returns {void}
+ */
 function showError(message) {
   errorMessageEl.textContent = message;
   errorModal.classList.add("modal_visible");
@@ -18,6 +24,12 @@ if (errorModalCloseBtn) {
     errorMessageEl.textContent = "";
   });
 }
+/**
+ * Safely parses a JSON string and returns the resulting object, or null if parsing fails.
+ *
+ * @param {string} jsonString - The JSON string to parse
+ * @returns {object|null} The parsed object if valid, otherwise null
+ */
 function parseJSON(jsonString) {
   try {
     return JSON.parse(jsonString);
@@ -26,6 +38,12 @@ function parseJSON(jsonString) {
   }
 }
 
+/**
+ * Validates a deck name string for type and length constraints.
+ *
+ * @param {string} name - The deck name to validate
+ * @returns {string|null} The valid name string, or null if invalid
+ */
 function validateName(name) {
   if (typeof name != "string" || name.length < 2 || name.length > 80) {
     return null;
@@ -67,7 +85,11 @@ form.addEventListener("submit", function (e) {
 });
 
 export { disableSubmitBtn, showError };
-// Enables the submit button
+/**
+ * Enables the submit button for the new deck form.
+ *
+ * @returns {void}
+ */
 function disableSubmitBtn() {
   submitBtn.disabled = false;
 }
