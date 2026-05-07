@@ -96,9 +96,9 @@ function createDeckEl(item) {
   deckEl.classList.add(`card_color_${colorName}`);
 
   const deckLink = deckEl.querySelector(".card__link");
-  deckLink.href = `#deck/${item.id}`;
+  deckLink.href = `#deck/${item._id}`;
   deckLink.addEventListener("click", () => {
-    currentDeckID = item.id;
+    currentDeckID = item._id;
   });
   return deckEl;
 }

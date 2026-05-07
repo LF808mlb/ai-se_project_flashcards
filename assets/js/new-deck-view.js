@@ -57,7 +57,7 @@ form.addEventListener("submit", function (e) {
   const uniqueId = `${slugify(jsonData.name)}-${Date.now()}`;
 
   const deck = {
-    id: uniqueId,
+    _id: uniqueId,
     color: normalizeColor(values.color),
     cards: jsonData.cards,
     name: jsonData.name,

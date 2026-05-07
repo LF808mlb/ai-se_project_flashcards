@@ -72,6 +72,6 @@ export function renderDeckView(deck) {
   // Set up Practice button to go to carousel page
   const practiceBtn = deckView.querySelector(".gallery__practice-btn");
   practiceBtn.onclick = () => {
-    window.location.hash = `#carousel/${deck.id}`;
+    window.location.hash = `#carousel/${deck._id}`;
   };
 }

@@ -1,56 +1,56 @@
 const gallery = [
   {
-    id: "html-basics",
+    _id: "html-basics",
     name: "HTML Basics",
     description: "Core HTML tags and concepts",
     cards: [
       {
-        id: 1,
+        _id: 1,
         question: "What does HTML stand for?",
         answer: "HyperText Markup Language",
       },
       {
-        id: 2,
+        _id: 2,
         question: "What tag creates the largest heading on a page?",
         answer: "<h1>",
       },
       {
-        id: 3,
+        _id: 3,
         question: "What tag is used to create a paragraph?",
         answer: "<p>",
       },
       {
-        id: 4,
+        _id: 4,
         question: "What tag creates a hyperlink?",
         answer: "<a>",
       },
       {
-        id: 5,
+        _id: 5,
         question: "What attribute is required on every <img> tag?",
         answer: "alt â€” it provides alternative text describing the image",
       },
       {
-        id: 6,
+        _id: 6,
         question: "What tag creates an unordered (bulleted) list?",
         answer: "<ul>",
       },
       {
-        id: 7,
+        _id: 7,
         question: "What tag creates an ordered (numbered) list?",
         answer: "<ol>",
       },
       {
-        id: 8,
+        _id: 8,
         question: "What tag contains a single item in a list?",
         answer: "<li>",
       },
       {
-        id: 9,
+        _id: 9,
         question: "What attribute makes a link open in a new tab?",
         answer: 'target="_blank"',
       },
       {
-        id: 10,
+        _id: 10,
         question: "What is the root element of every HTML page?",
         answer: "<html>",
       },
@@ -58,65 +58,65 @@ const gallery = [
     color: "#64d583",
   },
   {
-    id: "html-semantic",
+    _id: "html-semantic",
     name: "Semantic HTML",
     description: "Meaningful HTML elements for structure and accessibility",
     cards: [
       {
-        id: 11,
+        _id: 11,
         question: "What semantic tag represents the top section of a page?",
         answer: "<header>",
       },
       {
-        id: 12,
+        _id: 12,
         question: "What semantic tag wraps the main navigation links?",
         answer: "<nav>",
       },
       {
-        id: 13,
+        _id: 13,
         question:
           "What semantic tag represents the primary content of the page?",
         answer: "<main>",
       },
       {
-        id: 14,
+        _id: 14,
         question:
           "What semantic tag represents a standalone piece of content, like a blog post?",
         answer: "<article>",
       },
       {
-        id: 15,
+        _id: 15,
         question:
           "What semantic tag represents a thematic grouping of content?",
         answer: "<section>",
       },
       {
-        id: 16,
+        _id: 16,
         question:
           "What semantic tag represents content tangentially related to the main content (e.g., a sidebar)?",
         answer: "<aside>",
       },
       {
-        id: 17,
+        _id: 17,
         question:
           "What semantic tag represents the bottom of a page or section?",
         answer: "<footer>",
       },
       {
-        id: 18,
+        _id: 18,
         question:
           "What is a key benefit of using semantic HTML over generic <div> tags?",
         answer:
           "It improves accessibility, SEO, and makes the code easier to read",
       },
       {
-        id: 19,
+        _id: 19,
         question:
           "What non-semantic tag is commonly used as a generic container?",
         answer: "<div>",
       },
       {
-        id: 20,
+        _id: 20,
         question:
           "What non-semantic inline tag is used to style or group inline content?",
         answer: "<span>",
@@ -125,7 +125,7 @@ const gallery = [
     color: "#91a8f9",
   },
   {
-    id: "css-fundamentals",
+    _id: "css-fundamentals",
     name: "CSS Fundamentals",
     description: "Selectors, properties, and the cascade",
     cards: [
