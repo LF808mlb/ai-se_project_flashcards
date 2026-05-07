@@ -768,7 +768,13 @@ const gallery = [
 function getDeckByID(deckId) {
   return gallery.find((deck) => deck.id === deckId);
 }
-
+/**
+ * Returns a formatted string for the carousel title, showing the deck name and current card position.
+ *
+ * @param {{ name: string, cards: Array<object> }} deck - The deck object containing a name and cards array
+ * @param {number} currentCardIndex - The zero-based index of the current card
+ * @returns {string} The formatted carousel title string (e.g., "Deck Name · 2/10")
+ */
 export function getCarouselTitleString(deck, currentCardIndex) {
   return `${deck.name} · ${currentCardIndex + 1}/${deck.cards.length}`;
 }
