@@ -1,3 +1,10 @@
+/* Hide error modal by default, show when .modal_visible is present */
+#error-modal {
+  display: none;
+}
+#error-modal.modal_visible {
+  display: block;
+}
 /* Modal base styles */
 .modal {
   width: 320px;
