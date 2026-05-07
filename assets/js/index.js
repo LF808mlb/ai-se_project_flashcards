@@ -111,7 +111,12 @@ function renderDeckEl(item) {
   });
   galleryList.prepend(deckEl);
 }
-gallery.forEach(renderDeckEl);
+
+document.addEventListener("DOMContentLoaded", () => {
+  getDecks().then((decks) => {
+    decks.forEach(renderDeckEl);
+  });
+});
 
 window.addEventListener("hashchange", renderRoute);
 renderRoute();

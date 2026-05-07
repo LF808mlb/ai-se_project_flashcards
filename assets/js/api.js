@@ -1,3 +1,7 @@
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: "019e0362-dab2-7473-982d-ee3e997a6573"
+};
 const baseUrl = "https://se-flashcards-api.en.tripleten-services.com/v1";
 
 function processResponse(res) {
@@ -8,7 +12,7 @@ function processResponse(res) {
 }
 
 function getDecks() {
-  return fetch(`${baseUrl}/decks`).then(processResponse);
+  return fetch(`${baseUrl}/decks`, { headers }).then(processResponse);
 }
 
 export { getDecks };
