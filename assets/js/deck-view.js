@@ -1,11 +1,27 @@
-// Renders a card in the deck view
+/**
+ * Renders a single card in the deck view by creating its DOM element and appending it to the card list.
+ *
+ * @param {Object} cardData - The card data object containing question and answer.
+ * @param {string} cardData.question - The question text for the card.
+ * @param {string} cardData.answer - The answer text for the card.
+ * @param {string} deckColor - The background color to use for the card.
+ * @returns {void}
+ */
 function renderCard(cardData, deckColor) {
   const deckView = document.getElementById("deck-view");
   const cardList = deckView.querySelector(".gallery__list");
   const cardEl = createCard(cardData, deckColor);
   cardList.appendChild(cardEl);
 }
-// Creates a card element for the deck view
+/**
+ * Creates a DOM element for a single card in the deck view, including flip and delete button logic.
+ *
+ * @param {Object} cardData - The card data object containing question and answer.
+ * @param {string} cardData.question - The question text for the card.
+ * @param {string} cardData.answer - The answer text for the card.
+ * @param {string} deckColor - The background color to use for the card.
+ * @returns {HTMLElement} The DOM element representing the card.
+ */
 function createCard(cardData, deckColor) {
   const deckView = document.getElementById("deck-view");
   const cardTemplate = deckView.querySelector("#deck-card-template");
@@ -50,6 +66,16 @@ function createCard(cardData, deckColor) {
 
   return cardEl;
 }
+/**
+ * Renders the entire deck view, including the title, all cards, and the practice button.
+ *
+ * @param {Object} deck - The deck object to render.
+ * @param {string} deck._id - The unique identifier for the deck.
+ * @param {string} deck.name - The name of the deck.
+ * @param {string} deck.color - The color of the deck.
+ * @param {Array<Object>} deck.cards - The array of card objects in the deck.
+ * @returns {void}
+ */
 export function renderDeckView(deck) {
   // Select elements at the top
   const deckView = document.getElementById("deck-view");
