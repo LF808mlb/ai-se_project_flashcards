@@ -1,4 +1,4 @@
-import { gallery, getDeckByID } from "./gallery.js";
+import { getDeckByID, fetchedDecks } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView } from "./deck-view.js";
@@ -116,8 +116,7 @@ function renderDeckEl(item) {
 window.addEventListener("DOMContentLoaded", () => {
   getDecks()
     .then((decks) => {
-      // If you need to use fetchedDecks, uncomment the next line:
-      // fetchedDecks.push(...decks);
+      fetchedDecks.push(...decks);
       decks.forEach(renderDeckEl);
     })
     .catch(() => {
