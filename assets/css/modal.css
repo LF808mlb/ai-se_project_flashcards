@@ -1,11 +1,13 @@
+/* Modal base styles */
 .modal {
+  width: 320px;
+  height: 195px;
   position: fixed;
-  inset: 0;
-  background-color: #d9d9d980; /* d9d9d9 with 50% opacity */
-  visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 25%;
+  top: 45%;
+  border-radius: 20px;
+  padding: 12px 10px;
+  background: #ffaea5;
 }
 
 .modal_visible {
@@ -28,9 +30,17 @@
 }
 
 .modal__close-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
+  position: absolute;
+  width: 99px;
+  height: 46px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 10px;
   font-size: 16px;
+  cursor: pointer;
+  font-size: 18px;
 }
