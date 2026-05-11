@@ -9,6 +9,7 @@ function showError(message) {
   errorModal.classList.add("modal_visible");
 }
 import { gallery } from "./gallery.js";
+import { addDeck } from "./api.js";
 
 const form = document.querySelector("#new-deck-view-form");
 const submitBtn = document.querySelector(".new-deck-view__submit-btn");
@@ -72,16 +73,19 @@ form.addEventListener("submit", function (e) {
   if (jsonData.color) {
     jsonData.color = normalizeColor(jsonData.color);
   }
-  const uniqueId = `${slugify(jsonData.name)}-${Date.now()}`;
-
-  const deck = {
-    _id: uniqueId,
+  // Store remotely using addDeck
+  addDeck({
+    name: jsonData.name,
     color: normalizeColor(values.color),
     cards: jsonData.cards,
-    name: jsonData.name,
-  };
-  gallery.push(deck);
-  window.location.hash = `deck/${uniqueId}`;
+  })
+    .then((createdDeck) => {
+      // Optionally update UI, reset form, or navigate
+      window.location.hash = `deck/${createdDeck._id || slugify(jsonData.name)}`;
+    })
+    .catch(() => {
+      showError("Could not add deck. Please try again.");
+    });
 });
 
 export { disableSubmitBtn, showError };
