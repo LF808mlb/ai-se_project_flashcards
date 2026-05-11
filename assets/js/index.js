@@ -43,7 +43,8 @@ function renderRoute() {
   } else if (hash.startsWith("#carousel/")) {
     // ...existing code...
   } else if (hash === "#new-deck-view") {
-    // ...existing code...
+    newDeckView.style.display = "block";
+    if (typeof disableSubmitBtn === "function") disableSubmitBtn();
   } else {
     notFoundView.style.display = "";
   }
