@@ -25,69 +25,27 @@ const newDeckView = document.getElementById("new-deck-view");
  */
 function renderRoute() {
   const hash = window.location.hash;
-  const pageEl = document.querySelector(".page");
+  const aboutView = document.getElementById("about");
+  // Hide all views first
+  homeView.style.display = "none";
+  notFoundView.style.display = "none";
+  carouselView.style.display = "none";
+  deckView.style.display = "none";
+  newDeckView.style.display = "none";
+  if (aboutView) aboutView.style.display = "none";
 
   if (hash === "" || hash === "#home") {
     homeView.style.display = "";
-    notFoundView.style.display = "none";
-    carouselView.style.display = "none";
-    deckView.style.display = "none";
-    mainEl.classList.remove("page__main-content_location_carousel");
-    if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
+  } else if (hash === "#about") {
+    if (aboutView) aboutView.style.display = "block";
   } else if (hash.startsWith("#deck/")) {
-    const deckID = hash.split("/")[1];
-    const deck = getDeckByID(deckID);
-    if (deck && Array.isArray(deck.cards)) {
-      renderDeckView(deck);
-      homeView.style.display = "none";
-      notFoundView.style.display = "none";
-      carouselView.style.display = "none";
-      deckView.style.display = "block";
-      mainEl.classList.remove("page__main-content_location_carousel");
-      if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
-    } else {
-      homeView.style.display = "none";
-      notFoundView.style.display = "";
-      carouselView.style.display = "none";
-      deckView.style.display = "none";
-      mainEl.classList.remove("page__main-content_location_carousel");
-      if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
-    }
+    // ...existing code...
   } else if (hash.startsWith("#carousel/")) {
-    const deckID = hash.split("/")[1];
-    const deck = getDeckByID(deckID);
-    if (deck && Array.isArray(deck.cards) && deck.cards.length > 0) {
-      renderCarouselView(deck);
-      homeView.style.display = "none";
-      notFoundView.style.display = "none";
-      carouselView.style.display = "flex";
-      deckView.style.display = "none";
-      mainEl.classList.add("page__main-content_location_carousel");
-      if (pageEl) pageEl.classList.add("page_no-mobile-bar");
-    } else {
-      homeView.style.display = "none";
-      notFoundView.style.display = "";
-      carouselView.style.display = "none";
-      deckView.style.display = "none";
-      mainEl.classList.remove("page__main-content_location_carousel");
-      if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
-    }
+    // ...existing code...
   } else if (hash === "#new-deck-view") {
-    homeView.style.display = "none";
-    notFoundView.style.display = "none";
-    carouselView.style.display = "none";
-    deckView.style.display = "none";
-    newDeckView.style.display = "block";
-    mainEl.classList.remove("page__main-content_location_carousel");
-    if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
-    disableSubmitBtn();
+    // ...existing code...
   } else {
-    homeView.style.display = "none";
     notFoundView.style.display = "";
-    carouselView.style.display = "none";
-    deckView.style.display = "none";
-    mainEl.classList.remove("page__main-content_location_carousel");
-    if (pageEl) pageEl.classList.remove("page_no-mobile-bar");
   }
 }
 
