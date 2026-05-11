@@ -74,18 +74,20 @@ form.addEventListener("submit", function (e) {
     jsonData.color = normalizeColor(jsonData.color);
   }
   // Store remotely using addDeck
-  addDeck({
-    name: jsonData.name,
-    color: normalizeColor(values.color),
-    cards: jsonData.cards,
-  })
-    .then((createdDeck) => {
-      // Optionally update UI, reset form, or navigate
-      window.location.hash = `deck/${createdDeck._id || slugify(jsonData.name)}`;
+  import("./decks.js").then(({ fetchedDecks }) => {
+    addDeck({
+      name: jsonData.name,
+      color: normalizeColor(values.color),
+      cards: jsonData.cards,
     })
-    .catch(() => {
-      showError("Could not add deck. Please try again.");
-    });
+      .then((createdDeck) => {
+        fetchedDecks.push(createdDeck);
+        window.location.hash = `#carousel/${createdDeck._id}`;
+      })
+      .catch(() => {
+        showError("Could not add deck. Please try again.");
+      });
+  });
 });
 
 export { disableSubmitBtn, showError };
