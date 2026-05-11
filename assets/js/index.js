@@ -111,7 +111,7 @@ window.addEventListener("DOMContentLoaded", () => {
       showError("Error fetching decks");
     })
     .finally(() => {
-      router();
+      renderRoute();
     });
 });
 
