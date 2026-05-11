@@ -225,7 +225,7 @@
       </form>
     </section>
 
-    <section id="about-view" class="about">
+    <section id="about" class="about" style="display:none;">
   <pre class="about__about-page">
     <code>
       // First line of code
@@ -237,117 +237,6 @@
     <footer class="footer">
       <p class="footer__text">&copy;2026 Lesley Fukushima</p>
     </footer>
-    <script>
-      // Router logic for showing/hiding sections
-      const homeSection = document.getElementById("home");
-      const notFoundSection = document.getElementById("not-found");
-      const carouselSection = document.getElementById("carousel");
-      const deckViewSection = document.getElementById("deck-view");
-      const newDeckViewSection = document.getElementById("new-deck-view");
-      const aboutSection = document.getElementById("about-view");
-
-      function hideAllSections() {
-        homeSection.hidden = true;
-        notFoundSection.hidden = true;
-        carouselSection.hidden = true;
-        deckViewSection.hidden = true;
-        newDeckViewSection.hidden = true;
-        if (aboutSection) aboutSection.hidden = true;
-      }
-      function router() {
-        hideAllSections();
-        const hash = window.location.hash;
-        if (hash === "#about") {
-          aboutSection.hidden = false;
-        } else if (hash === "#home" || hash === "" || hash === "#/") {
-          homeSection.hidden = false;
-        } else if (hash.startsWith("#deck/")) {
-          deckViewSection.hidden = false;
-        } else if (hash.startsWith("#carousel/")) {
-          carouselSection.hidden = false;
-        } else if (hash === "#new-deck-view") {
-          newDeckViewSection.hidden = false;
-        } else {
-          notFoundSection.hidden = false;
-        }
-      }
-
-      window.addEventListener("hashchange", router);
-      window.addEventListener("DOMContentLoaded", router);
-
-      function renderHome() {
-        hideAllSections();
-        homeSection.hidden = false;
-        if (aboutSection) aboutSection.hidden = true;
-      }
-
-      function renderNotFound() {
-        hideAllSections();
-        notFoundSection.hidden = false;
-        if (aboutSection) aboutSection.hidden = true;
-      }
-
-      function renderCarousel() {
-        hideAllSections();
-        carouselSection.hidden = false;
-        if (aboutSection) aboutSection.hidden = true;
-      }
-
-      function renderDeckView() {
-        hideAllSections();
-        deckViewSection.hidden = false;
-        if (aboutSection) aboutSection.hidden = true;
-      }
-
-      function renderNewDeckView() {
-        hideAllSections();
-        newDeckViewSection.hidden = false;
-        if (aboutSection) aboutSection.hidden = true;
-      }
-
-      function renderAbout() {
-        hideAllSections();
-        if (aboutSection) aboutSection.hidden = false;
-      }
-
-      function router() {
-        const hash = window.location.hash.replace("#", "");
-        switch (hash) {
-          case "":
-          case "home":
-            renderHome();
-            break;
-          case "carousel":
-            renderCarousel();
-            break;
-          case "deck-view":
-            renderDeckView();
-            break;
-          case "new-deck-view":
-            renderNewDeckView();
-            break;
-          case "about":
-            renderAbout();
-            break;
-          default:
-            renderNotFound();
-        }
-      }
-
-      window.addEventListener("hashchange", router);
-      window.addEventListener("DOMContentLoaded", () => {
-        router();
-        // Add event listener for New Deck button in home view
-        const newDeckBtn = document.querySelector(
-          "#home .gallery__new-card-btn",
-        );
-        if (newDeckBtn) {
-          newDeckBtn.addEventListener("click", () => {
-            window.location.hash = "new-deck-view";
-          });
-        }
-      });
-    </script>
     <script type="module" src="assets/js/index.js"></script>
   </body>
 </html>

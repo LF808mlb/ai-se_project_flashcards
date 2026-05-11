@@ -39,9 +39,25 @@ function renderRoute() {
   } else if (hash === "#about") {
     if (aboutView) aboutView.style.display = "block";
   } else if (hash.startsWith("#deck/")) {
-    // ...existing code...
+    // Extract deck ID from hash
+    const deckID = hash.split("/")[1];
+    const deck = getDeckByID(deckID);
+    if (deck && Array.isArray(deck.cards)) {
+      renderDeckView(deck);
+      deckView.style.display = "block";
+    } else {
+      notFoundView.style.display = "";
+    }
   } else if (hash.startsWith("#carousel/")) {
-    // ...existing code...
+    // Extract deck ID from hash
+    const deckID = hash.split("/")[1];
+    const deck = getDeckByID(deckID);
+    if (deck && Array.isArray(deck.cards) && deck.cards.length > 0) {
+      renderCarouselView(deck);
+      carouselView.style.display = "flex";
+    } else {
+      notFoundView.style.display = "";
+    }
   } else if (hash === "#new-deck-view") {
     newDeckView.style.display = "block";
     if (typeof disableSubmitBtn === "function") disableSubmitBtn();
@@ -113,6 +129,13 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     .finally(() => {
       renderRoute();
+      // Add event listener for New Deck button in home view
+      const newDeckBtn = document.querySelector("#home .gallery__new-card-btn");
+      if (newDeckBtn) {
+        newDeckBtn.addEventListener("click", () => {
+          window.location.hash = "#new-deck-view";
+        });
+      }
     });
 });
 
