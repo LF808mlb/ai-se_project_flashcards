@@ -52,6 +52,13 @@ function validateName(name) {
   return name;
 }
 
+/**
+ * Handles the submission of the new deck form, including validation, error handling,
+ * and adding the new deck to remote storage and local state. Navigates to the carousel view on success.
+ *
+ * @param {Event} e - The form submission event
+ * @returns {void}
+ */
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(form);
