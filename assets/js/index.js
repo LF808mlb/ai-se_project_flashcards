@@ -1,4 +1,4 @@
-import { getDeckByID, fetchedDecks } from "./decks.js";
+import { getDeckByID, fetchedDecks, deleteDeckHelper } from "./decks.js";
 import { renderCarouselView } from "./carousel.js";
 import { hexToString } from "./colorMap.js";
 import { renderDeckView } from "./deck-view.js";
@@ -93,14 +93,7 @@ function renderDeckEl(item) {
 
   deleteBtn.addEventListener("click", () => {
     deleteDeck(item._id)
-      .then(() => {
-        deckEl.remove();
-        // Remove from fetchedDecks
-        const idx = fetchedDecks.findIndex((deck) => deck._id === item._id);
-        if (idx !== -1) {
-          fetchedDecks.splice(idx, 1);
-        }
-      })
+      .then(() => deleteDeckHelper(item._id))
       .catch(() => {
         showError("Error deleting deck");
       });
